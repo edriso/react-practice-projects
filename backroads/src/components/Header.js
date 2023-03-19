@@ -1,68 +1,68 @@
 function Header() {
   return (
-    <nav class="navbar">
-      <div class="nav-center">
-        <div class="nav-header">
-          <img src="./images/logo.svg" class="nav-logo" alt="backroads" />
-          <button type="button" class="nav-toggle" id="nav-toggle">
-            <i class="fas fa-bars"></i>
+    <nav className="navbar">
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src="./images/logo.svg" className="nav-logo" alt="backroads" />
+          <button type="button" className="nav-toggle" id="nav-toggle">
+            <i className="fas fa-bars"></i>
           </button>
         </div>
-        <ul class="nav-links" id="nav-links">
+        <ul className="nav-links" id="nav-links">
           <li>
-            <a href="#home" class="nav-link">
+            <a href="#home" className="nav-link">
               home
             </a>
           </li>
 
           <li>
-            <a href="#about" class="nav-link">
+            <a href="#about" className="nav-link">
               about
             </a>
           </li>
 
           <li>
-            <a href="#services" class="nav-link">
+            <a href="#services" className="nav-link">
               services
             </a>
           </li>
 
           <li>
-            <a href="#tours" class="nav-link">
+            <a href="#tours" className="nav-link">
               tours
             </a>
           </li>
         </ul>
 
-        <ul class="nav-icons">
+        <ul className="nav-icons">
           <li>
             <a
               href="https://www.twitter.com"
               target="_blank"
-              class="nav-icon"
+              className="nav-icon"
               rel="noreferrer"
             >
-              <i class="fab fa-facebook"></i>
+              <i className="fab fa-facebook"></i>
             </a>
           </li>
           <li>
             <a
               href="https://www.twitter.com"
               target="_blank"
-              class="nav-icon"
+              className="nav-icon"
               rel="noreferrer"
             >
-              <i class="fab fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </a>
           </li>
           <li>
             <a
               href="https://www.twitter.com"
               target="_blank"
-              class="nav-icon"
+              className="nav-icon"
               rel="noreferrer"
             >
-              <i class="fab fa-squarespace"></i>
+              <i className="fab fa-squarespace"></i>
             </a>
           </li>
         </ul>

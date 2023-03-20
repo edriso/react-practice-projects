@@ -33,7 +33,7 @@ function Navbar() {
                   className="nav-icon"
                   rel="noreferrer"
                 >
-                  <i className={`fab ${elm.icon}`}></i>
+                  <i className={elm.icon}></i>
                 </a>
               </li>
             );

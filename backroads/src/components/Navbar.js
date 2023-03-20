@@ -24,16 +24,16 @@ function Navbar() {
         </ul>
 
         <ul className="nav-icons">
-          {socialLinks.map((elm, i) => {
+          {socialLinks.map((link, i) => {
             return (
               <li key={i}>
                 <a
-                  href={elm.href}
+                  href={link.href}
                   target="_blank"
                   className="nav-icon"
                   rel="noreferrer"
                 >
-                  <i className={elm.icon}></i>
+                  <i className={link.icon}></i>
                 </a>
               </li>
             );

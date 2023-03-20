@@ -1,11 +1,9 @@
+import { useState } from "react";
 import { pageLinks, socialLinks } from "../data";
 import logo from "../assets/images/logo.svg";
 
 function Navbar() {
-  const toggleNav = () => {
-    const links = document.getElementById("nav-links");
-    links.classList.toggle("show-links");
-  };
+  const [navToggle, setNavToggle] = useState(false);
 
   return (
     <nav className="navbar">
@@ -16,12 +14,15 @@ function Navbar() {
             type="button"
             className="nav-toggle"
             id="nav-toggle"
-            onClick={toggleNav}
+            onClick={() => setNavToggle(!navToggle)}
           >
             <i className="fas fa-bars"></i>
           </button>
         </div>
-        <ul className="nav-links" id="nav-links">
+        <ul
+          className={"nav-links " + (navToggle && "show-links")}
+          id="nav-links"
+        >
           {pageLinks.map((elm) => {
             return (
               <li key={elm}>

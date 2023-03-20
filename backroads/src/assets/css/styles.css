@@ -441,6 +441,7 @@ Footer
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   color: var(--clr-white);
+  margin-bottom: 0;
 }
 .copyright span {
   margin-left: 0.5rem;

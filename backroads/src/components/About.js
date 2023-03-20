@@ -1,13 +1,10 @@
+import Title from "./Title";
 import aboutImg from "../assets/images/about.jpeg";
 
 function About() {
   return (
     <section className="section" id="about">
-      <div className="section-title">
-        <h2>
-          about <span>us</span>
-        </h2>
-      </div>
+      <Title subTitle="About" highlight="Us" />
 
       <div className="section-center about-center">
         <div className="about-img">
@@ -25,7 +22,7 @@ function About() {
             quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
             unde dolor?
           </p>
-          <a href="#" className="btn">
+          <a href="#more" className="btn">
             read more
           </a>
         </article>

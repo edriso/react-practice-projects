@@ -119,6 +119,7 @@ p {
     line-height: 1;
   }
 }
+
 /*  global classes */
 
 .btn {
@@ -459,9 +460,10 @@ Navbar
   background: var(--clr-white);
   box-shadow: var(--dark-shadow);
   z-index: 2;
-  height: 4rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
+  padding: 1rem 0;
 }
 .nav-icons {
   display: none;
@@ -510,7 +512,7 @@ Navbar
   transition: var(--transition);
 }
 .show-links {
-  height: 280px;
+  height: 225px;
 }
 /* nav at bigger screen size */
 @media screen and (min-width: 992px) {

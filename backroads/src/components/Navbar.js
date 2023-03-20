@@ -2,12 +2,22 @@ import { pageLinks, socialLinks } from "../data";
 import logo from "../assets/images/logo.svg";
 
 function Navbar() {
+  const toggleNav = () => {
+    const links = document.getElementById("nav-links");
+    links.classList.toggle("show-links");
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} className="nav-logo" alt="backroads" />
-          <button type="button" className="nav-toggle" id="nav-toggle">
+          <button
+            type="button"
+            className="nav-toggle"
+            id="nav-toggle"
+            onClick={toggleNav}
+          >
             <i className="fas fa-bars"></i>
           </button>
         </div>

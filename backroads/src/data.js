@@ -14,3 +14,24 @@ export const socialLinks = [
     icon: "fab fa-squarespace",
   },
 ];
+
+export const offeredServices = [
+  {
+    title: "saving money",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.",
+    icon: "fas fa-wallet fa-fw",
+  },
+  {
+    title: "endless hiking",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.",
+    icon: "fas fa-tree fa-fw",
+  },
+  {
+    title: "amazing comfort",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.",
+    icon: "fas fa-socks fa-fw",
+  },
+];

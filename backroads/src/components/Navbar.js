@@ -1,4 +1,4 @@
-import { pageLinks, navIcons } from "../data";
+import { pageLinks, socialLinks } from "../data";
 import logo from "../assets/images/logo.svg";
 
 function Navbar() {
@@ -24,7 +24,7 @@ function Navbar() {
         </ul>
 
         <ul className="nav-icons">
-          {navIcons.map((elm, i) => {
+          {socialLinks.map((elm, i) => {
             return (
               <li key={i}>
                 <a

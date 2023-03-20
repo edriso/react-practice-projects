@@ -1,6 +1,6 @@
 export const pageLinks = ["home", "about", "services", "tours"];
 
-export const navIcons = [
+export const socialLinks = [
   {
     href: "https://www.facebook.com",
     icon: "fab fa-facebook",

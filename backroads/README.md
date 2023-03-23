@@ -2,7 +2,7 @@
 
 A simple landing page for travel tours company. Aims to convert a static website to React app.
 
-##### Project Setup
+#### Project Setup
 
 Run the following command in the terminal
 
@@ -10,6 +10,6 @@ Run the following command in the terminal
 npm install && npm start
 ```
 
-##### Snapshot
+#### Snapshot
 
 ![Screenshot](screenshot.png)

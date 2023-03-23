@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function TourCard({ tour, deleteTour }) {
-  const [isFullInfo, setIsFullInfo] = useState(true);
+  const [isReadMore, setIsReadMore] = useState(true);
 
   return (
     <article className="single-tour">
@@ -11,13 +11,13 @@ function TourCard({ tour, deleteTour }) {
       <div className="tour-info">
         <h5>{tour.name}</h5>
         <p>
-          {isFullInfo ? tour.info : tour.info?.substring(0, 200) + "..."}
+          {isReadMore ? tour.info : tour.info?.substring(0, 200) + "..."}
           &nbsp;
           <button
             className="info-btn"
-            onClick={() => setIsFullInfo(!isFullInfo)}
+            onClick={() => setIsReadMore(!isReadMore)}
           >
-            {isFullInfo ? "read less" : "read more"}
+            {isReadMore ? "show less" : "read more"}
           </button>
         </p>
         <button

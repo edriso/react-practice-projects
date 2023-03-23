@@ -1,6 +1,6 @@
 # Backroads
 
-A simple landing page for travel tours company.
+A simple landing page for travel tours company. Aims to convert a static website to React app.
 
 ##### Project Setup
 

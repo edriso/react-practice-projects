@@ -1,8 +1,8 @@
 # Tours
 
-Practicing on useState and useEffect hooks, events, and on condition rendering.
+Practicing on useState and useEffect hooks, events, and on conditional rendering.
 
-##### Project Setup
+#### Project Setup
 
 Run the following command in the terminal
 
@@ -10,6 +10,6 @@ Run the following command in the terminal
 npm install && npm run dev
 ```
 
-##### Snapshot
+#### Snapshot
 
 ![Screenshot](screenshot.png)

@@ -11,3 +11,5 @@ npm install && npm run dev
 #### Screenshot
 
 ![screenshot](screenshot.png)
+
+[Live preview](react-practice-projects-k9gz9620h-edriso.vercel.app)

@@ -3,7 +3,9 @@ import { toast } from "react-toastify";
 
 export function ColorList({ colors }) {
   const copyColor = (color) => {
-    toast.success("Copied to clipboard!");
+    navigator.clipboard.writeText(color).then(() => {
+      toast.success("Color copied to clipboard!");
+    });
   };
 
   return (

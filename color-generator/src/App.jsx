@@ -5,7 +5,7 @@ import { useState } from "react";
 const App = () => {
   const [colors, setColors] = useState([]);
 
-  const generateColor = (e, color) => {
+  const generateColors = (e, color) => {
     e.preventDefault();
     console.log(color);
   };
@@ -14,7 +14,7 @@ const App = () => {
     <main>
       <section className="container">
         <h4>Color Generator</h4>
-        <Form generateColor={generateColor} />
+        <Form generateColors={generateColors} />
         <ColorsSection colors={colors} />
       </section>
     </main>

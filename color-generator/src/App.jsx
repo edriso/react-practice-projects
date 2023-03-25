@@ -2,18 +2,24 @@ import { useState } from "react";
 import { Form } from "./components/Form";
 import { ColorList } from "./components/ColorList";
 import Values from "values.js";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const App = () => {
   const [colors, setColors] = useState([]);
+  const [brightness, setBrightness] = useState(null);
 
   const generateColors = (color) => {
-    setColors(new Values(color).all(10));
+    try {
+      setColors(new Values(color).all(10));
+      setBrightness(new Values(color).getBrightness());
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
     <main>
-      <Form generateColors={generateColors} />
+      <Form generateColors={generateColors} colorBrightness={brightness} />
       <ColorList colors={colors} />
       <ToastContainer
         position="top-right"

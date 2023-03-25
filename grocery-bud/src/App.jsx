@@ -25,10 +25,15 @@ function App() {
     setItems(updateItems);
   };
 
+  const deleteItem = (itemID) => {
+    const updateItems = items.filter((item) => item.id !== itemID);
+    setItems(updateItems);
+  };
+
   return (
     <main className="section-center">
       <Form addItem={addItem} />
-      <ItemList items={items} checkItem={checkItem} />
+      <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-function ItemList({ items, checkItem }) {
+function ItemList({ items, checkItem, deleteItem }) {
   return (
     <section className="items">
       {items.map((item) => {
@@ -10,7 +10,12 @@ function ItemList({ items, checkItem }) {
               onChange={() => checkItem(item.id)}
             />
             <p className={item.completed ? "completed" : ""}>{item.text}</p>
-            <button className="btn remove-btn">Delete</button>
+            <button
+              className="btn remove-btn"
+              onClick={() => deleteItem(item.id)}
+            >
+              Delete
+            </button>
           </article>
         );
       })}

@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Form } from "./components/Form";
 import { ColorList } from "./components/ColorList";
-import { useState } from "react";
 import Values from "values.js";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const [colors, setColors] = useState([]);
@@ -12,12 +13,14 @@ const App = () => {
 
   return (
     <main>
-      <section className="container">
-        <h4>Color Generator</h4>
-        <Form generateColors={generateColors} />
-      </section>
-
+      <Form generateColors={generateColors} />
       <ColorList colors={colors} />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        theme="colored"
+      />
     </main>
   );
 };

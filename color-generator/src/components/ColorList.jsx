@@ -1,8 +1,9 @@
 import { nanoid } from "nanoid";
+import { toast } from "react-toastify";
 
 export function ColorList({ colors }) {
   const copyColor = (color) => {
-    alert(color);
+    toast.success("Copied to clipboard!");
   };
 
   return (

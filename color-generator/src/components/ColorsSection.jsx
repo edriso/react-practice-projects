@@ -1,11 +1,20 @@
 export function ColorsSection({ colors }) {
+  const copyColor = (color) => {
+    alert(color);
+  };
+
   return (
     <section className="colors">
-      {colors.map((elm, i) => {
+      {colors.map((color) => {
         return (
-          <article className="color" key={i}>
-            <p className="percent-value">{elm?.percent}%</p>
-            <p className="color-value">{elm?.hex}</p>
+          <article
+            className={color.type === "shade" ? "color color-light" : "color"}
+            style={{ backgroundColor: `#${color.hex}` }}
+            key={color.id}
+            onClick={() => copyColor(`#${color.hex}`)}
+          >
+            <p className="percent-value">{color.percent}%</p>
+            <p className="color-value">#{color.hex}</p>
           </article>
         );
       })}

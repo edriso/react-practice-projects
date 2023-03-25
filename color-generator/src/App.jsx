@@ -16,6 +16,7 @@ const App = () => {
         id: nanoid(),
         hex: color.hex,
         percent: color.weight,
+        type: color.type,
       });
     }
 
@@ -27,8 +28,8 @@ const App = () => {
       <section className="container">
         <h4>Color Generator</h4>
         <Form generateColors={generateColors} />
-        <ColorsSection colors={colors} />
       </section>
+      <ColorsSection colors={colors} />
     </main>
   );
 };

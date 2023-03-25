@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 export function ColorList({ colors }) {
   const copyColor = (color) => {
     alert(color);
@@ -6,15 +8,18 @@ export function ColorList({ colors }) {
   return (
     <section className="colors">
       {colors.map((color) => {
+        const id = nanoid();
+        const { hex, weight, type } = color;
+
         return (
           <article
-            className={color.type === "shade" ? "color color-light" : "color"}
-            style={{ backgroundColor: `#${color.hex}` }}
-            key={color.id}
-            onClick={() => copyColor(`#${color.hex}`)}
+            className={type === "shade" ? "color color-light" : "color"}
+            style={{ backgroundColor: `#${hex}` }}
+            key={id}
+            onClick={() => copyColor(`#${hex}`)}
           >
-            <p className="percent-value">{color.percent}%</p>
-            <p className="color-value">#{color.hex}</p>
+            <p className="percent-value">{weight}%</p>
+            <p className="color-value">#{hex}</p>
           </article>
         );
       })}

@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { nanoid } from "nanoid";
 import Form from "./components/Form";
 import ItemList from "./components/ItemList";
+import { toast, ToastContainer } from "react-toastify";
 
 function App() {
-  const [items, setItems] = useState([
-    { text: "test", completed: true, id: nanoid() },
-  ]);
+  const [items, setItems] = useState([]);
 
   const addItem = (item) => {
     const updateItem = [...items, item];
     setItems(updateItem);
+    toast.success("Item added to the list");
   };
 
   const checkItem = (itemID) => {
@@ -18,23 +17,25 @@ function App() {
       if (item.id === itemID) {
         item.completed = !item.completed;
       }
-
       return item;
     });
 
     setItems(updateItems);
   };
-
   const deleteItem = (itemID) => {
     const updateItems = items.filter((item) => item.id !== itemID);
     setItems(updateItems);
   };
 
   return (
-    <main className="section-center">
-      <Form addItem={addItem} />
-      <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
-    </main>
+    <>
+      <main className="section-center">
+        <Form addItem={addItem} />
+        <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
+      </main>
+
+      <ToastContainer position="top-right" autoClose={2000} />
+    </>
   );
 }
 

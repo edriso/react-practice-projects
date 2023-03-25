@@ -14,6 +14,7 @@ function Form({ addItem }) {
         completed: false,
       };
       addItem(item);
+      setText("");
     } else {
       // error msg
     }

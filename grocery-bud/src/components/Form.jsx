@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Form({ addItem }) {
   const [text, setText] = useState("");
@@ -16,7 +17,7 @@ function Form({ addItem }) {
       addItem(item);
       setText("");
     } else {
-      // error msg
+      toast.error("Item must has a value!");
     }
   };
   return (

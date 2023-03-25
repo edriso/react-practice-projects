@@ -9,7 +9,7 @@ function App() {
   const addItem = (item) => {
     const updateItem = [...items, item];
     setItems(updateItem);
-    toast.success("Item added to the list");
+    toast.success("Item added to the list!");
   };
 
   const checkItem = (itemID) => {
@@ -25,6 +25,7 @@ function App() {
   const deleteItem = (itemID) => {
     const updateItems = items.filter((item) => item.id !== itemID);
     setItems(updateItems);
+    toast.success("Item deleted!");
   };
 
   return (
@@ -34,7 +35,7 @@ function App() {
         <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
       </main>
 
-      <ToastContainer position="top-right" autoClose={2000} />
+      <ToastContainer position="top-center" autoClose={2000} />
     </>
   );
 }

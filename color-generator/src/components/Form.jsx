@@ -22,21 +22,30 @@ export function Form({ generateColors }) {
   }, []);
 
   return (
-    <form className="color-form" onSubmit={handleSubmit}>
-      <input type="color" name="color" value={color} onChange={handleChange} />
-      <input
-        type="text"
-        placeholder={color}
-        value={color}
-        onChange={handleChange}
-      />
-      <button
-        type="submit"
-        className="btn"
-        style={{ backgroundColor: color, color: brightness > 75 && "#000" }}
-      >
-        Generate
-      </button>
-    </form>
+    <section className="container">
+      <h4>Color Generator</h4>
+
+      <form className="color-form" onSubmit={handleSubmit}>
+        <input
+          type="color"
+          name="color"
+          value={color}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          placeholder={color}
+          value={color}
+          onChange={handleChange}
+        />
+        <button
+          type="submit"
+          className="btn"
+          style={{ backgroundColor: color, color: brightness > 75 && "#000" }}
+        >
+          Generate
+        </button>
+      </form>
+    </section>
   );
 }

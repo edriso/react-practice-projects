@@ -3,8 +3,13 @@ import { useState } from "react";
 export function Form({ generateColors }) {
   const [color, setColor] = useState("#645cff");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    generateColors(color);
+  };
+
   return (
-    <form className="color-form" onSubmit={(e) => generateColors(e, color)}>
+    <form className="color-form" onSubmit={handleSubmit}>
       <input
         type="color"
         name="color"

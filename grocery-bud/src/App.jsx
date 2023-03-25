@@ -7,36 +7,36 @@ function App() {
   const [items, setItems] = useState([]);
 
   const addItem = (item) => {
-    const updateItem = [...items, item];
-    setItems(updateItem);
+    const updatedItems = [...items, item];
+    setItems(updatedItems);
+    localStorage.setItem("list", JSON.stringify(updatedItems));
     toast.success("Item added to the list!");
   };
 
   const checkItem = (itemID) => {
-    const updateItems = items.filter((item) => {
+    const updatedItems = items.filter((item) => {
       if (item.id === itemID) {
         item.completed = !item.completed;
       }
       return item;
     });
 
-    setItems(updateItems);
+    setItems(updatedItems);
+    localStorage.setItem("list", JSON.stringify(updatedItems));
   };
   const deleteItem = (itemID) => {
-    const updateItems = items.filter((item) => item.id !== itemID);
-    setItems(updateItems);
+    const updatedItems = items.filter((item) => item.id !== itemID);
+    setItems(updatedItems);
+    localStorage.setItem("list", JSON.stringify(updatedItems));
     toast.success("Item deleted!");
   };
 
   return (
-    <>
-      <main className="section-center">
-        <Form addItem={addItem} />
-        <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
-      </main>
-
+    <main className="section-center">
+      <Form addItem={addItem} />
+      <ItemList items={items} checkItem={checkItem} deleteItem={deleteItem} />
       <ToastContainer position="top-center" autoClose={2000} />
-    </>
+    </main>
   );
 }
 

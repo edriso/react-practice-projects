@@ -1,4 +1,4 @@
-export function ColorsSection({ colors }) {
+export function ColorList({ colors }) {
   const copyColor = (color) => {
     alert(color);
   };

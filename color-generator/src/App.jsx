@@ -1,5 +1,5 @@
 import { Form } from "./components/Form";
-import { ColorsSection } from "./components/ColorsSection";
+import { ColorList } from "./components/ColorList";
 import { useState } from "react";
 import Values from "values.js";
 import { nanoid } from "nanoid";
@@ -29,7 +29,7 @@ const App = () => {
         <h4>Color Generator</h4>
         <Form generateColors={generateColors} />
       </section>
-      <ColorsSection colors={colors} />
+      <ColorList colors={colors} />
     </main>
   );
 };

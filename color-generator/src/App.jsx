@@ -1,13 +1,25 @@
 import { Form } from "./components/Form";
 import { ColorsSection } from "./components/ColorsSection";
 import { useState } from "react";
-// import Values from "values.js";
+import Values from "values.js";
+import { nanoid } from "nanoid";
 
 const App = () => {
   const [colors, setColors] = useState([]);
 
   const generateColors = (color) => {
-    console.log(color);
+    const colorsValues = new Values(color).all(10);
+
+    let colorsArr = [];
+    for (color of colorsValues) {
+      colorsArr.push({
+        id: nanoid(),
+        hex: color.hex,
+        percent: color.weight,
+      });
+    }
+
+    setColors(colorsArr);
   };
 
   return (

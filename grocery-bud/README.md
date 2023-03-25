@@ -12,4 +12,4 @@ npm install && npm run dev
 
 ![screenshot](screenshot.png)
 
-[Live preview](react-practice-projects-k9gz9620h-edriso.vercel.app)
+[Live preview](https://react-practice-projects-k9gz9620h-edriso.vercel.app/)

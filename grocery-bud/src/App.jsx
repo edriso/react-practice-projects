@@ -8,10 +8,12 @@ function App() {
     { text: "test", completed: true, id: nanoid() },
   ]);
 
-  const addItem = () => {};
+  const addItem = (item) => {
+    const updateItem = [...items, item];
+    setItems(updateItem);
+  };
 
   const checkItem = (itemID) => {
-    console.log(itemID);
     const updateItems = items.filter((item) => {
       if (item.id === itemID) {
         item.completed = !item.completed;

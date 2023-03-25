@@ -314,7 +314,3 @@ form h4 {
   font-size: 0.75rem;
   background: var(--black);
 }
-
-.Toastify__toast {
-  text-transform: capitalize;
-}

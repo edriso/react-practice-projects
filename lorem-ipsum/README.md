@@ -1,6 +1,6 @@
 # Lorem-Ipsum
 
-Generate lorem ipsum text
+Generate lorem ipsum text, and trying nanoid package.
 
 #### App Setup Command
 

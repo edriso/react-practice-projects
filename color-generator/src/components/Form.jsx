@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Form({ generateColors }) {
   const [color, setColor] = useState("#645cff");
@@ -7,6 +7,10 @@ export function Form({ generateColors }) {
     e.preventDefault();
     generateColors(color);
   };
+
+  useEffect(() => {
+    generateColors(color);
+  }, []);
 
   return (
     <form className="color-form" onSubmit={handleSubmit}>

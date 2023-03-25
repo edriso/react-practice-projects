@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import ItemList from "./components/ItemList";
 import { toast, ToastContainer } from "react-toastify";
 
 function App() {
   const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const localItems = localStorage.getItem("list");
+    if (localItems) {
+      setItems(JSON.parse(localItems));
+    }
+  }, []);
 
   const addItem = (item) => {
     const updatedItems = [...items, item];

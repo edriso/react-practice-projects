@@ -25,7 +25,7 @@ const App = () => {
         position="top-right"
         autoClose={2000}
         hideProgressBar={true}
-        theme="colored"
+        theme="light"
       />
     </main>
   );

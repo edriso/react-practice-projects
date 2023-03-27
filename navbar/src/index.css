@@ -307,5 +307,59 @@ button.nav-toggle {
   color: var(--grey-900);
   background-color: var(--primary-100);
   padding-left: 1.5rem;
-  font-weight: bold;
+}
+
+.social-icons {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  button.nav-toggle {
+    display: none;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links-container {
+    height: auto !important;
+  }
+
+  .links {
+    display: flex;
+    padding-bottom: 0;
+  }
+
+  .links a {
+    padding: 0 0.5rem;
+  }
+  .links a:hover {
+    padding-left: 0.5rem;
+    color: var(--primary-500);
+    background-color: transparent;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    color: var(--primary-500);
+    transition: var(--transition);
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-300);
+  }
 }

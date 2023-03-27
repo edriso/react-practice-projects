@@ -5,7 +5,6 @@ import logo from "../logo.svg";
 
 const Header = () => {
   const [showLinks, setShowLinks] = useState(false);
-  const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
 
   const linksHeightStyle = {
@@ -28,11 +27,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav
-          className="links-container"
-          style={linksHeightStyle}
-          // ref={linksContainerRef}
-        >
+        <nav className="links-container" style={linksHeightStyle}>
           <ul className="links" ref={linksRef}>
             {links.map((link) => {
               return (
@@ -43,17 +38,18 @@ const Header = () => {
             })}
           </ul>
         </nav>
-        {/* <ul className="social">
-            {social.map((elm) => {
-              return (
-                <li key={elm.id}>
-                  <a href={elm.url} target="_blank" rel="noopener noreferrer">
-                    <i>{elm.icon}</i>
-                  </a>
-                </li>
-              );
-            })}
-          </ul> */}
+
+        <ul className="social-icons">
+          {social.map((elm) => {
+            return (
+              <li key={elm.id}>
+                <a href={elm.url} target="_blank" rel="noopener noreferrer">
+                  <i>{elm.icon}</i>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </header>
   );

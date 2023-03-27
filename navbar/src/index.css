@@ -259,11 +259,14 @@ ul {
   box-shadow: var(--shadow-1);
 }
 
+.nav-center {
+  padding: 1rem;
+}
+
 .nav-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .logo {
@@ -287,10 +290,6 @@ button.nav-toggle {
 .links-container {
   overflow: hidden;
   transition: var(--transition);
-}
-
-.links {
-  padding-bottom: 0.5rem;
 }
 
 .links a {
@@ -318,16 +317,13 @@ button.nav-toggle {
     display: none;
   }
 
-  .nav-header {
-    padding: 0;
-  }
-
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem;
   }
 
   .links-container {
@@ -336,7 +332,6 @@ button.nav-toggle {
 
   .links {
     display: flex;
-    padding-bottom: 0;
   }
 
   .links a {

@@ -284,7 +284,16 @@ button.nav-toggle {
   transform: rotate(90deg);
 }
 
-.links-container a {
+.links-container {
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.links {
+  padding-bottom: 0.5rem;
+}
+
+.links a {
   color: var(--grey-700);
   font-size: 1rem;
   text-transform: capitalize;
@@ -294,7 +303,7 @@ button.nav-toggle {
   transition: var(--transition);
 }
 
-.links-container a:hover {
+.links a:hover {
   color: var(--grey-900);
   background-color: var(--primary-100);
   padding-left: 1.5rem;

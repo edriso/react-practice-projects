@@ -12,4 +12,4 @@ npm install && npm run dev
 
 ![screenshot](screenshot.png)
 
-[Live preview](https://react-practice-projects-nine.vercel.app/)
+[Live preview](https://sweet-grocery-bud.netlify.app)

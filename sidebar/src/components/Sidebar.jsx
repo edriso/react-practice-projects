@@ -1,14 +1,16 @@
 import logo from "../logo.svg";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { social, links } from "../data";
+import { useGlobalContext } from "../customHooks/useGlobalContext";
 
 function Sidebar() {
+  const { showSidebar, setShowSidebar } = useGlobalContext();
+
   return (
-    // .show-sidebar
-    <aside className={`sidebar`}>
+    <aside className={`sidebar ${showSidebar && "show-sidebar"}`}>
       <div className="sidebar-header">
         <img src={logo} className="logo" alt="logo" />
-        <button className="close-btn">
+        <button className="close-btn" onClick={() => setShowSidebar(false)}>
           <AiOutlineCloseSquare />
         </button>
       </div>

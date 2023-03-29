@@ -2,19 +2,19 @@ import { FaBars } from "react-icons/fa";
 import { useGlobalContext } from "../customHooks/useGlobalContext";
 
 function Home() {
-  const { showModal, setShowModal, showSidebar, setShowSidebar } =
+  const { isSidebarOpen, setIsSidebarOpen, isModalOpen, setIsModalOpen } =
     useGlobalContext();
 
   return (
     <main>
       <button
         className="sidebar-toggle"
-        onClick={() => setShowSidebar(!showSidebar)}
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
         <FaBars />
       </button>
 
-      <button className="btn" onClick={() => setShowModal(!showModal)}>
+      <button className="btn" onClick={() => setIsModalOpen(!isModalOpen)}>
         show modal
       </button>
     </main>

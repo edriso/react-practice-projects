@@ -3,12 +3,12 @@ import { createContext, useState } from "react";
 export const GlobalContext = createContext();
 
 function AppContext({ children }) {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <GlobalContext.Provider
-      value={{ showSidebar, setShowSidebar, showModal, setShowModal }}
+      value={{ isSidebarOpen, setIsSidebarOpen, isModalOpen, setIsModalOpen }}
     >
       {children}
     </GlobalContext.Provider>

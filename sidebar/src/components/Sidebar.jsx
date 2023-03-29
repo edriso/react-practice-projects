@@ -4,13 +4,13 @@ import { social, links } from "../data";
 import { useGlobalContext } from "../customHooks/useGlobalContext";
 
 function Sidebar() {
-  const { showSidebar, setShowSidebar } = useGlobalContext();
+  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 
   return (
-    <aside className={`sidebar ${showSidebar && "show-sidebar"}`}>
+    <aside className={`sidebar ${isSidebarOpen && "show-sidebar"}`}>
       <div className="sidebar-header">
         <img src={logo} className="logo" alt="logo" />
-        <button className="close-btn" onClick={() => setShowSidebar(false)}>
+        <button className="close-btn" onClick={() => setIsSidebarOpen(false)}>
           <AiOutlineCloseSquare />
         </button>
       </div>

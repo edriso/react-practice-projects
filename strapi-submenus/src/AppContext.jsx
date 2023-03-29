@@ -4,8 +4,8 @@ import { useContext } from "react";
 const GlobalContext = createContext();
 
 export function AppProvider({ children }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [pageId, setPageId] = useState(null);
 
   const openSidebar = () => {
     setIsSidebarOpen(true);
@@ -13,22 +13,15 @@ export function AppProvider({ children }) {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
-  const openSubmenu = () => {
-    setIsSubmenuOpen(true);
-  };
-  const closeSubmenu = () => {
-    setIsSubmenuOpen(false);
-  };
 
   return (
     <GlobalContext.Provider
       value={{
         isSidebarOpen,
-        isSubmenuOpen,
         openSidebar,
         closeSidebar,
-        openSubmenu,
-        closeSubmenu,
+        pageId,
+        setPageId,
       }}
     >
       {children}

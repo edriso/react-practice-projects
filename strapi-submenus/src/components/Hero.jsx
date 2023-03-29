@@ -4,7 +4,7 @@ function Hero() {
   const { closeSubmenu } = useGlobalContext();
 
   return (
-    <section className="hero">
+    <section className="hero-container">
       <div className="hero-center">
         <h1>
           Manage Any Content

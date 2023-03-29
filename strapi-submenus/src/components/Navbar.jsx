@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <nav className="nav" onMouseOver={handleSubmenu}>
       <div className="nav-center">
-        <h3 className="logo">Stripe</h3>
+        <h3 className="logo">Strapi</h3>
 
         <button className="toggle-btn" onClick={openSidebar}>
           <FaBars />

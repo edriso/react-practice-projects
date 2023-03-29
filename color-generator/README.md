@@ -25,3 +25,5 @@ npm install && npm run dev
 #### Screenshot
 
 ![screenshot](screenshot.png)
+
+[Preview](https://d-color-generator.netlify.app/)

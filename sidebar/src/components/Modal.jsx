@@ -5,7 +5,7 @@ function Modal() {
   const { isModalOpen, closeModal } = useGlobalContext();
 
   return (
-    <section className={`modal-overlay ${isModalOpen && "show-modal"}`}>
+    <section className={`${isModalOpen ? "show-modal " : ""}modal-overlay`}>
       <div className="modal-container">
         <h3>modal content</h3>
 

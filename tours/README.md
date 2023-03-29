@@ -13,3 +13,5 @@ npm install && npm run dev
 #### Snapshot
 
 ![Screenshot](screenshot.png)
+
+[Preview](https://stalwart-mochi-31a558.netlify.app)

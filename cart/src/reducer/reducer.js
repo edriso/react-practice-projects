@@ -6,6 +6,13 @@ const reducer = (state, action) => {
     return { ...state, cart: new Map() };
   }
 
+  if (action.type === TYPES.REMOVE_ITEM) {
+    // created new instance to not mutate the state
+    const updatedCart = new Map(state.cart);
+    updatedCart.delete(action.payload.id);
+    return { ...state, cart: updatedCart };
+  }
+
   if (action.type === TYPES.INCREASE_ITEM) {
     const updatedCart = state.cart.filter((item) => {
       if (item.id === action.payload.id) {
@@ -35,14 +42,6 @@ const reducer = (state, action) => {
       ...state,
       cart: new Map(cartItems.map((item) => [item.id, item])),
     };
-  }
-
-  if (action.type === TYPES.REMOVE_ITEM) {
-    const updatedCart = state.cart.filter(
-      (item) => item.id !== action.payload.id
-    );
-
-    return { ...state, cart: updatedCart };
   }
 
   if (action.type === TYPES.LOADING) {

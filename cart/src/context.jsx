@@ -21,8 +21,18 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: TYPES.REMOVE_ITEM, payload: { id } });
   };
 
+  const increaseItem = (id) => {
+    dispatch({ type: TYPES.INCREASE_ITEM, payload: { id } });
+  };
+
+  const decreaseItem = (id) => {
+    dispatch({ type: TYPES.DECREASE_ITEM, payload: { id } });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, clearCart, removeItem }}>
+    <AppContext.Provider
+      value={{ ...state, clearCart, removeItem, increaseItem, decreaseItem }}
+    >
       {children}
     </AppContext.Provider>
   );

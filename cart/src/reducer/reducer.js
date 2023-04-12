@@ -14,26 +14,27 @@ const reducer = (state, action) => {
   }
 
   if (action.type === TYPES.INCREASE_ITEM) {
-    const updatedCart = state.cart.filter((item) => {
-      if (item.id === action.payload.id) {
-        item.amount += 1;
-      }
-      return item;
-    });
+    const itemId = action.payload.id;
+    const updatedCart = new Map(state.cart);
+    const item = updatedCart.get(itemId);
+    // item.amount += 1; // this increased amount by 2 due to React.StrictMode
+    const newItem = { ...item, amount: item.amount + 1 };
+
+    updatedCart.set(itemId, newItem);
     return { ...state, cart: updatedCart };
   }
 
   if (action.type === TYPES.DECREASE_ITEM) {
-    const updatedCart = state.cart.filter((item) => {
-      if (item.id === action.payload.id && item.amount <= 1) {
-        return;
-      }
+    const itemId = action.payload.id;
+    const updatedCart = new Map(state.cart);
+    const item = updatedCart.get(itemId);
+    if (item.amount <= 1) {
+      updatedCart.delete(itemId);
+    } else {
+      const newItem = { ...item, amount: item.amount - 1 };
+      updatedCart.set(itemId, newItem);
+    }
 
-      if (item.id === action.payload.id) {
-        item.amount -= 1;
-      }
-      return item;
-    });
     return { ...state, cart: updatedCart };
   }
 

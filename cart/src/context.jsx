@@ -1,23 +1,24 @@
 import { createContext, useContext, useReducer } from "react";
 import cartItems from "./assets/data";
 import reducer from "./reducer/reducer";
+import { TYPES } from "./reducer/actions";
 
 const AppContext = createContext();
 
 const initialState = {
-  cart: cartItems,
+  cart: new Map(cartItems.map((item) => [item.id, item])),
   loading: false,
-};
-
-const handleState = (action) => {
-  console.log(action);
 };
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const handleState = (actionType) => {
+    dispatch({ type: actionType });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, handleState }}>
+    <AppContext.Provider value={{ ...state, handleState, TYPES }}>
       {children}
     </AppContext.Provider>
   );

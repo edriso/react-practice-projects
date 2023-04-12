@@ -3,7 +3,7 @@ import cartItems from "../assets/data";
 
 const reducer = (state, action) => {
   if (action.type === TYPES.CLEAR_CART) {
-    return { ...state, cart: [] };
+    return { ...state, cart: new Map() };
   }
 
   if (action.type === TYPES.INCREASE_ITEM) {
@@ -31,7 +31,10 @@ const reducer = (state, action) => {
   }
 
   if (action.type === TYPES.DISPLAY_ITEMS) {
-    return { ...state, cart: cartItems };
+    return {
+      ...state,
+      cart: new Map(cartItems.map((item) => [item.id, item])),
+    };
   }
 
   if (action.type === TYPES.REMOVE_ITEM) {

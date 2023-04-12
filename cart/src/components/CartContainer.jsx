@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context";
 import CartItem from "./CartItem";
 
 const CartContainer = () => {
-  const { cart, handleState, CLEAR_CART } = useGlobalContext();
+  const { cart, clearCart } = useGlobalContext();
 
   const cartArray = Array.from(cart.entries());
 
@@ -22,7 +22,7 @@ const CartContainer = () => {
     <section className="cart">
       {/* cart header */}
       <header>
-        <h2>your bag</h2>
+        <h2>Your cart</h2>
       </header>
       {/* cart items */}
       <div>
@@ -39,10 +39,7 @@ const CartContainer = () => {
             total <span>$10</span>
           </h5>
         </div>
-        <button
-          className="btn btn-hipster"
-          onClick={() => handleState(CLEAR_CART)}
-        >
+        <button className="btn btn-hipster" onClick={clearCart}>
           clear cart
         </button>
       </footer>

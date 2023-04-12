@@ -4,15 +4,20 @@ import reducer from "./reducer/reducer";
 
 const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
-  const defaultState = {
-    cart: cartItems,
-  };
+const initialState = {
+  cart: cartItems,
+  loading: false,
+};
 
-  const [state, dispatch] = useReducer(reducer, defaultState);
+const handleState = (action) => {
+  console.log(action);
+};
+
+export const AppProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ ...state, handleState }}>
       {children}
     </AppContext.Provider>
   );

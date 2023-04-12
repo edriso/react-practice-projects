@@ -19,7 +19,6 @@ const reducer = (state, action) => {
     const item = updatedCart.get(itemId);
     // item.amount += 1; // this increased amount by 2 due to React.StrictMode
     const newItem = { ...item, amount: item.amount + 1 };
-
     updatedCart.set(itemId, newItem);
     return { ...state, cart: updatedCart };
   }
@@ -28,20 +27,20 @@ const reducer = (state, action) => {
     const itemId = action.payload.id;
     const updatedCart = new Map(state.cart);
     const item = updatedCart.get(itemId);
-    if (item.amount <= 1) {
+    if (item.amount === 1) {
       updatedCart.delete(itemId);
     } else {
       const newItem = { ...item, amount: item.amount - 1 };
       updatedCart.set(itemId, newItem);
     }
-
     return { ...state, cart: updatedCart };
   }
 
   if (action.type === TYPES.DISPLAY_ITEMS) {
     return {
       ...state,
-      cart: new Map(cartItems.map((item) => [item.id, item])),
+      cart: action.payload.items,
+      loading: false,
     };
   }
 

@@ -32,6 +32,14 @@ const App = () => {
     });
   };
 
+  const randomReview = () => {
+    let randomIndex = Math.floor(Math.random() * reviews.length);
+    if (randomIndex === index) {
+      randomIndex = randomIndex + 1;
+    }
+    setIndex(checkIndex(randomIndex));
+  };
+
   return (
     <main>
       <article className="review">
@@ -54,6 +62,10 @@ const App = () => {
             <FaChevronRight />
           </button>
         </div>
+
+        <button className="btn btn-hipster" onClick={randomReview}>
+          Surprise me
+        </button>
       </article>
     </main>
   );

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import cartItems from "../../cartItems";
+import cartItemsLocal from "../../cartItems";
 // import { openModal } from "../modal/modalSlice";
 
 const url = "https://course-api.com/react-useReducer-cart-project";
@@ -69,6 +69,7 @@ const cartSlice = createSlice({
 
     builder.addCase(getCartItems.rejected, (state, action) => {
       state.isLoading = false;
+      state.cartItems = cartItemsLocal;
       console.log(action.payload);
     });
   },

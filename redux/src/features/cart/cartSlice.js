@@ -57,18 +57,20 @@ const cartSlice = createSlice({
       state.total = total;
     },
   },
-  extraReducers: {
-    [getCartItems.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(getCartItems.pending, (state) => {
       state.isLoading = true;
-    },
-    [getCartItems.fulfilled]: (state, action) => {
+    });
+
+    builder.addCase(getCartItems.fulfilled, (state, action) => {
       state.cartItems = action.payload;
       state.isLoading = false;
-    },
-    [getCartItems.rejected]: (state, action) => {
+    });
+
+    builder.addCase(getCartItems.rejected, (state, action) => {
       state.isLoading = false;
       console.log(action.payload);
-    },
+    });
   },
 });
 

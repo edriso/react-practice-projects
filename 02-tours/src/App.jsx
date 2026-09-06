@@ -5,16 +5,24 @@ const url = "https://course-api.com/react-tours-project";
 
 const App = () => {
   const [tours, setTours] = useState([]);
+  const [error, setError] = useState("");
   const [loading, setIsLoading] = useState(true);
 
   const getData = async () => {
     setIsLoading(true);
 
-    const response = await fetch(url);
-    const data = await response.json();
-    setTours(data);
-
-    setIsLoading(false);
+    setError("");
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Unable to load tours");
+      const data = await response.json();
+      if (!Array.isArray(data)) throw new Error("Invalid tour response");
+      setTours(data);
+    } catch {
+      setError("Tours could not be loaded. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -30,6 +38,11 @@ const App = () => {
     <main>
       {loading ? (
         <h4>Loading...</h4>
+      ) : error ? (
+        <div className="title">
+          <p role="alert">{error}</p>
+          <button className="btn" onClick={getData}>Try again</button>
+        </div>
       ) : tours.length ? (
         <>
           <div className="title">

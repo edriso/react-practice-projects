@@ -1,0 +1,26 @@
+name: Quality checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ['00-backroads', '01-birthday-buddy', '02-tours', '03-reviews', '04-accordion', '05-menu', '06-tabs', '07-slider', '08-lorem-ipsum', '09-color-generator', '10-grocery-bud', '11-navbar', '12-sidebar', '13-strapi-submenus', '14-cart', 'redux']
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm audit --audit-level=moderate
